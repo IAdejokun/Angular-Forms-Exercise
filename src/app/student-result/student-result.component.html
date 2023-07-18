@@ -1,0 +1,48 @@
+
+<table class="w-100 container">
+<tr class="text-center bg-primary text-white">
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Course</th>
+    <th>Department</th>
+    <th>Hostel Name</th>
+    <th>Number of Credits</th>
+    <th>Display Result</th>
+</tr>
+
+<tr *ngFor="let s of studentDataResult; let i = index" class="text-center">
+    <td>{{s.id}}</td>
+    <td>{{s.name}}</td>
+    <td>{{s.age}}</td>
+    <td>{{s.course}}</td>
+    <td>{{s.department}}</td>
+    <td>{{s.hostelName}}</td>
+    <td>{{s.numOfCredits}}</td>
+    <td><button type="button" class="btn btn-primary" (click)="onSelected(s)">View Result</button></td> 
+</tr>
+
+</table>
+
+  <div *ngIf="selectedItem" class="modal modal-dialog-centered" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+       <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                   <div class="modal-header">
+                         <h4 class="modal-title">{{selectedItem.name}}</h4>
+                         <button type="button" class="close btn btn-danger" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+                       </div>
+              <div class="modal-body">
+                         <p>ID: {{selectedItem.id}}</p>
+                         <p>Name:  {{selectedItem.name}}</p>
+                         <p>Age: {{selectedItem.age}}</p>
+                         <p>Course: {{selectedItem.course}}</p>
+                         <p>Department: {{selectedItem.department}}</p>
+                         <p>Hostel Name: {{selectedItem.hostelName}}</p>
+                         <p>Numuber of Credit: {{selectedItem.numOfCredits}}</p>
+                       </div>
+                   <div class="modal-footer">
+                         <button type="button" class="btn btn-danger" (click)="onCloseHandled()" >Close</button>
+                       </div>
+          </div>
+           </div>
+</div>

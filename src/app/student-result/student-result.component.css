@@ -1,0 +1,13 @@
+th{
+    padding: 15px;
+    font-weight:500;
+}
+
+td{
+    padding: 15px;
+}
+
+.modal{
+    background: rgba(0,0,0, .5);
+};
+
